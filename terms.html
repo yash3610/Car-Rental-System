@@ -1,0 +1,26 @@
+<div ng-if="UserInfo.approvedTermsAndConditions || !UserInfo.isAuthenticated">
+	<ncy-breadcrumb></ncy-breadcrumb>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<form name="tandc" ng-submit="approveTandC()">
+				<div class="panel panel-default" style="margin-top:20px;">
+					<div class="panel-body" style="max-height:600px; overflow-y:scroll; background-color:white;">
+						<div style="text-align:center;">
+							<h1>Terms and Conditions</h1>
+							<p>
+								This is where your terms and conditions content will go.
+								Original Driving License is mandatory and should be deposited with us until the end of the trip, without which we would be unable to give you a car. We accept a Passport instead of a Driving License only if you are a foreign national or an NRI.
+If you are employed, we would need to see your employment ID and Aadhar card during the delivery of the car. If you are self-employed, we require you to show us your GST registration certificate and Aadhar for verification purposes.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div style="text-align:center;" ng-if="settings.Authentication.RequireTermsAndConditions && !UserInfo.approvedTermsAndConditions && UserInfo.isAuthenticated">
+					<button style="margin:20px;" class="btn btn-primary" type="submit">Agree to Terms and Conditions </button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
